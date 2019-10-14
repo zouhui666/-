@@ -1,0 +1,530 @@
+/*通用*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+
+/*头部*/
+
+header {
+    width: 100%;
+    font-size: 12px;
+    color: white;
+    background: #333333;
+    height: 40px;
+}
+
+
+/*头部内容*/
+
+#header-content {
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+
+/*头部左边的内容*/
+
+#header-content-left {
+    float: left;
+    display: inline-block;
+    padding-right: 270px;
+}
+
+
+/*头部右边的内容*/
+
+#header-content-right {
+    display: inline-block;
+}
+
+
+/*头部的列表*/
+
+#header-content ul li {
+    float: left;
+    margin-left: 15px;
+    list-style: none;
+}
+
+
+/*头部的超链接*/
+
+#header-content li a {
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+
+/*头部的购物车*/
+
+#header-content-right li:nth-of-type(4) {
+    width: 120px;
+    text-align: center;
+    background-color: #424242;
+    background: url("image/购物车.png") no-repeat 5px 10px;
+    background-size: 20px 20px;
+}
+
+
+/*导航部分*/
+
+nav {
+    width: 100%;
+    height: 100px;
+    background: url("image/logo.png") no-repeat 20px 20px;
+    background-size: 56px;
+}
+
+
+/*导航的列表*/
+
+nav ul {
+    line-height: 100px;
+    margin-left: 200px;
+}
+
+
+/*导航的列表*/
+
+nav ul li {
+    float: left;
+    list-style: none;
+    font-size: 17px;
+    margin-left: 25px;
+}
+
+
+/*导航的超链接*/
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*导航的表单*/
+
+nav form {
+    float: left;
+    margin-top: 25px;
+    margin-left: 60px;
+    text-align: right;
+}
+
+nav form input::-webkit-input-placeholder {
+    color: red;
+    font-size: 15px;
+}
+
+
+/*导航的的按钮*/
+
+nav button {
+    margin-top: 25px;
+    background: white;
+}
+
+
+/*首页的侧边栏*/
+
+aside {
+    background-image: linear-gradient(to bottom, #150009, #42001a);
+    width: 230px;
+    height: 460px;
+    position: absolute;
+    top: 140px;
+    left: 20px;
+}
+
+
+/*侧边栏的列表*/
+
+aside ul {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+/*侧边栏的列表*/
+
+aside ul li {
+    margin-bottom: 25px;
+    list-style: none;
+    background: url("image/箭头.png") no-repeat 180px 5px;
+    background-size: 15px;
+}
+
+
+/*侧边栏列表超链接*/
+
+aside ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+
+/*话费充值等功能*/
+
+#options {
+    width: 235px;
+    height: 169px;
+    margin-left: 20px;
+    margin-top: 15px;
+    background: #5f5750;
+    float: left;
+}
+
+
+/*功能的内容*/
+
+#options .option-content {
+    position: relative;
+    width: 78px;
+    height: 83px;
+    float: left;
+    font-size: 13px;
+    border-right: 1px solid #665e57;
+    border-bottom: 1px solid #665e57;
+}
+
+
+/*功能的每个内容的插入体图片的大小 位置*/
+
+.option-content:nth-of-type(1),
+.option-content:nth-of-type(2),
+.option-content:nth-of-type(3),
+.option-content:nth-of-type(4),
+.option-content:nth-of-type(5),
+.option-content:nth-of-type(6) {
+    background-size: 20px;
+    background-position: center 20px;
+    background-repeat: no-repeat;
+}
+
+
+/*功能的插入图片*/
+
+.option-content:nth-of-type(1) {
+    background-image: url("image/手机.png");
+}
+
+.option-content:nth-of-type(2) {
+    background-image: url("image/礼物.png");
+}
+
+.option-content:nth-of-type(3) {
+    background-image: url("image/F码.png");
+}
+
+.option-content:nth-of-type(4) {
+    background-image: url("image/米粉卡.png");
+}
+
+.option-content:nth-of-type(5) {
+    background-image: url("image/以旧换新.png");
+}
+
+.option-content:nth-of-type(6) {
+    background-image: url("image/话费充值.png");
+}
+
+
+/*功能的段落设置*/
+
+#options .option-content p {
+    color: white;
+    padding-top: 45px;
+    text-align: center;
+}
+
+
+/*新的产品*/
+
+.new-product {
+    float: left;
+    margin-left: 14px;
+    margin-top: 15px;
+}
+
+
+/*红米7A的内容*/
+
+.bottom-photo {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+
+/*手机系列的设置*/
+
+#Mobile-phone-series,
+#home-appliances {
+    width: 1226px;
+    height: 612px;
+    margin-left: 20px;
+    margin-top: 80px;
+}
+
+
+/*手机系列的第一个字体设置*/
+
+#Mobile-phone-series>p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    background: url("phone-image/右箭头圆形.png") no-repeat;
+    background-size: 22px;
+    background-position: 1205px 5px;
+}
+
+
+/*段落中的SPAN设置*/
+
+#Mobile-phone-series>p span {
+    font-size: 15px;
+    padding-left: 1100px;
+}
+
+
+/*米9图片*/
+
+#mi9 {
+    float: left;
+}
+
+
+/*图片的列表*/
+
+#Mobile-phone-series ul {
+    margin-left: 5px;
+    display: inline-block;
+    width: 980px;
+    height: 630px;
+}
+
+
+/*图片的列表的内容*/
+
+#Mobile-phone-series ul li,
+#home-appliances-content ul li {
+    list-style: none;
+    width: 234px;
+    height: 298px;
+    position: relative;
+    display: inline-block;
+    background: white;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+
+/*列表内容的图片的设置*/
+
+#Mobile-phone-series ul li img {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+}
+
+
+/*列表中第一个段落设置*/
+
+#Mobile-phone-series ul li p:nth-of-type(1) {
+    width: 63px;
+    height: 20px;
+    background: #83c44e;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 85px;
+}
+
+#Mobile-phone-series ul li p:nth-of-type(2) {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 200px;
+}
+
+#Mobile-phone-series ul li p:nth-of-type(2) span {
+    font-size: 12px;
+    color: #d2daf3;
+}
+
+#Mobile-phone-series ul li p:nth-of-type(3) {
+    text-align: center;
+    color: #ff9147;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+#home-appliances article {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+#home-appliances article p {
+    font-size: 20px;
+    float: left;
+}
+
+#home-appliances article ul {
+    font-size: 16px;
+    padding-left: 930px;
+    display: block;
+}
+
+#home-appliances article ul li {
+    float: left;
+    list-style: none;
+    margin-left: 30px;
+    position: relative;
+}
+
+#home-appliances-content li p:nth-of-type(1) {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 190px;
+}
+
+#home-appliances-content li p:nth-of-type(1) span {
+    font-size: 13px;
+    color: #665e57;
+}
+
+#home-appliances-content li p:nth-of-type(2) {
+    font-size: 15px;
+    color: #ff6700;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#home-appliances-content .urser-comment {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 235px;
+    height: 80px;
+    background-color: #ff9147;
+    opacity: 0;
+}
+
+#home-appliances-content .urser-comment:hover {
+    opacity: 1;
+}
+
+#home-appliances-content li .urser-comment p {
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 0;
+}
+
+#home-appliances-content li:nth-of-type(2),
+#home-appliances-content li:nth-of-type(3),
+#home-appliances-content li:nth-of-type(4),
+#home-appliances-content li:nth-of-type(5),
+#home-appliances-content li:nth-of-type(7),
+#home-appliances-content li:nth-of-type(8),
+#home-appliances-content li:nth-of-type(9) {
+    background-repeat: no-repeat;
+    background-position: 54px 24px;
+    background-size: 150px 140px;
+}
+
+#home-appliances-content li:nth-of-type(2) {
+    background-image: url("home-appliances/pms_1504498936.11861982!220x220.jpg");
+}
+
+#home-appliances-content li:nth-of-type(3) {
+    background-image: url("home-appliances/xmad_15512365381648_yZpKS.jpg");
+}
+
+#home-appliances-content li:nth-of-type(4) {
+    background-image: url("home-appliances/xmad_15350951136177_QUuVm.png");
+}
+
+#home-appliances-content li:nth-of-type(5) {
+    background-image: url("home-appliances/pms_1524636075.71677607!220x220.jpg");
+}
+
+#home-appliances-content li:nth-of-type(7) {
+    background-image: url("home-appliances/xmad_14972549116226_tZpod.png");
+}
+
+#home-appliances-content li:nth-of-type(8) {
+    background-image: url("home-appliances/pms_1545286017.38639954!220x220.jpg");
+}
+
+#home-appliances-content li:nth-of-type(9) {
+    background-image: url("home-appliances/xmad_15281923207128_rOfDp.png");
+}
+
+#home-appliances-content li:nth-of-type(10) {
+    background-color: #f5f5f5;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-top {
+    display: inline-block;
+    height: 145px;
+    width: 237px;
+    background: url("home-appliances/pms_1521634907.16181074!220x220.jpg") no-repeat;
+    background-size: 63px 72px;
+    background-position: 126px 37px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-top p:nth-of-type(1) {
+    font-size: 15px;
+    margin-top: 40px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-top p:nth-of-type(2) {
+    font-size: 15px;
+    color: #ff6700;
+    margin-top: 10px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-bottom {
+    display: inline-block;
+    height: 145px;
+    width: 237px;
+    background: url("home-appliances/左箭头.png") no-repeat;
+    background-size: 50px;
+    background-position: 142px 48px;
+    background-color: white;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-bottom p:nth-of-type(1) {
+    font-size: 22px;
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+#home-appliances-content li:nth-of-type(10) .li-bottom p:nth-of-type(2) {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 30px;
+    text-align: left;
+    color: black;
+}

@@ -1,0 +1,327 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    
+    header {
+        height: 55px;
+        width: 100%;
+        background: rgba(225, 225, 225, .7);
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    
+    #header-content {
+        margin: 0 auto;
+        height: 55px;
+        width: 100%;
+    }
+    
+    #header-content #logo {
+        width: 30%;
+        float: left;
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+    
+    #header-content nav {
+        width: 60%;
+        float: left;
+        padding-top: 6px;
+        padding-right: 10%;
+    }
+    
+    nav ul li {
+        float: left;
+        margin-left: 30px;
+        list-style: none;
+        font-size: 12px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    nav ul li a:hover {
+        color: blue;
+        text-decoration: underline;
+        appearance: none;
+    }
+    
+    nav img {
+        position: absolute;
+        top: 22px;
+        right: 130px;
+    }
+    
+    #background-image {
+        width: 100%;
+        height: 354px;
+        margin-top: 55px;
+    }
+    
+    #company-profile {
+        display: inline-block;
+        width: 63%;
+        height: 291px;
+        margin-left: 18.6%;
+        margin-top: -123px;
+        background: #f2f3f6;
+    }
+    
+    #company-profile img {
+        margin-left: 30px;
+        margin-top: 30px;
+        float: left;
+        margin-right: 10px;
+    }
+    
+    #company-profile article p {
+        font-size: 10px;
+        color: #59625e;
+        line-height: 15px;
+        margin-top: 25px;
+    }
+    
+    #number {
+        width: 75%;
+        height: 63px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    
+    #number table {
+        border-collapse: separate;
+        border-spacing: 70px 5px;
+        margin-left: 38px;
+    }
+    
+    #number th {
+        font-size: 15px;
+        color: #96ccee;
+        border-right: 1px solid #e4e5e8;
+    }
+    
+    #number td {
+        font-size: 10px;
+        color: #c2c0ba;
+    }
+    
+    #company-culture {
+        width: 65%;
+        height: 334px;
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+    
+    #company-culture>h2 {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    
+    #company-culture>p {
+        font-size: 10px;
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .culture-content {
+        float: left;
+        display: block;
+    }
+    
+    #culture-content-1 {
+        height: 150px;
+        width: 400px;
+        background: #f2f3f6;
+        margin: 0;
+    }
+    
+    .culture-content article {
+        padding-top: 50px;
+    }
+    
+    .culture-content article h2 {
+        text-align: center;
+        font-size: 13px;
+        color: #a6acae;
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+    
+    .culture-content article p {
+        text-align: center;
+        font-size: 10px;
+        color: #a6acae;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+    #culture-content-2,
+    #culture-content-3 {
+        width: 200px;
+        height: 146px;
+        background: #f2f3f6;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    #company-weltare {
+        clear: both;
+        width: 65%;
+        height: 220px;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    
+    #company-weltare h2 {
+        text-align: center;
+        font-size: 15px;
+        margin: 0;
+    }
+    
+    #company-weltare p {
+        text-align: center;
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    
+    #company-weltare .weltare-content {
+        float: left;
+        display: block;
+        padding-right: 25px;
+        margin-top: 50px;
+        border-right: 1px solid #e9e9e9;
+    }
+    
+    #company-weltare .weltare-content h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+    }
+    
+    #company-weltare .weltare-content li {
+        font-size: 10px;
+        color: #c6b9b9;
+        list-style: circle;
+        list-style-position: inside;
+        line-height: 20px;
+    }
+    
+    #team-mein {
+        clear: both;
+        width: 100%;
+        height: 335px;
+        margin-top: 77px;
+        position: relative;
+    }
+    
+    #team-mein h2 {
+        position: absolute;
+        top: 80px;
+        left: 45%;
+        margin: 0;
+        font-size: 15px;
+        color: white;
+    }
+    
+    #team-mein p {
+        position: absolute;
+        top: 100px;
+        left: 46%;
+        font-size: 10px;
+        color: white;
+        margin: 0;
+    }
+    
+    #team-mein :nth-child(4) {
+        position: absolute;
+        top: 150px;
+        left: 400px;
+    }
+    
+    #history {
+        height: 360px;
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 120px;
+        clear: both;
+        background: url("image/直线.png") repeat-y;
+        background-position: 48px 10px;
+    }
+    
+    #history ul li {
+        line-height: 50px;
+        font-size: 12px;
+        list-style: none;
+        background: url("image/圆点.png") no-repeat;
+        background-size: 15px 15px;
+        background-position: 33px 20px;
+    }
+    
+    footer {
+        position: relative;
+        clear: both;
+        width: 100%;
+        height: 210px;
+        margin-top: 80px;
+    }
+    
+    footer #company-message {
+        background: #f2f3f6;
+        height: 200px;
+    }
+    
+    footer #copyright-message {
+        background: #294c78;
+        height: 50px;
+    }
+    
+    footer ul {
+        float: left;
+        margin-left: 60px;
+        margin-top: 20px;
+        line-height: 25px;
+        list-style: none;
+    }
+    
+    footer ul a {
+        font-size: 12px;
+        text-decoration: none;
+        color: gray;
+        font-family: serif;
+        letter-spacing: 1px;
+    }
+    
+    footer img {
+        position: absolute;
+        top: 30px;
+        right: 100px;
+    }
+    
+    footer #company-message p {
+        position: absolute;
+        bottom: 13px;
+        right: 90px;
+        font-size: 13px;
+        color: gray;
+        font-family: serif;
+    }
+    
+    footer #copyright-message pre {
+        margin: 0;
+        padding-top: 20px;
+        padding-left: 80px;
+        color: white;
+        font-size: 12px;
+    }

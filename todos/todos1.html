@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todos</title>
+    <style>
+        .active {
+            text-decoration: none;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span><input type="checkbox" id="header_checkbox"></span>
+        <input type="text" id="header_input">
+    </header>
+    <main>
+        <ul id="main_ul"></ul>
+    </main>
+    <footer>
+        <ul>
+            <li><span id="nums"></span>item(s) left</li>
+            <li id="all"><button>All</button></li>
+            <li id="active"><button>Active</button></li>
+            <li id="completed"><button>Completed</button></li>
+            <li id="clear"><button>Clear Completed</button></li>
+        </ul>
+    </footer>
+    <script>
+        //点击input标签把值传给li中
+        header_input.onkeyup = function(e) {
+                if (e.keyCode == 13 && header_input.value.trim()) {
+                    let li = document.createElement('li');
+                    let li_text = document.createTextNode(header_input.value);
+                    let li_checkbox = document.createElement('input');
+                    let li_x = document.createElement('button');
+                    li.setAttribute('class', 'active');
+                    li_x.textContent = 'X';
+                    li_checkbox.setAttribute('type', 'checkbox');
+                    li_checkbox.setAttribute('class', 'li_checkbox');
+                    li.appendChild(li_checkbox);
+                    li.appendChild(li_text);
+                    li.appendChild(li_x);
+                    main_ul.appendChild(li);
+                    header_input.value = '';
+                }
+            }
+            // 通过事件代理实现样式和删除功能
+        main_ul.onclick = function(e) {
+                let element = e.target;
+                let li = element.parentNode;
+                if (element.className == 'li_checkbox') {
+                    if (element.checked) {
+                        li.removeAttribute('class', 'active');
+                        li.setAttribute('class', 'completed');
+
+                    } else {
+                        li.removeAttribute('class', 'completed');
+                        li.setAttribute('class', 'active');
+                    }
+                }
+                if (element.tagName == 'BUTTON') {
+                    main_ul.removeChild(li);
+                }
+            }
+            //实现全选和全取消功能
+        header_checkbox.onclick = function() {
+                let li_checkbox = Array.from(document.querySelectorAll('.li_checkbox'));
+                let boolean = li_checkbox.every(item => item.checked == true);
+                let li_checkbox_parentNode = li_checkbox.map(item => item.parentNode);
+                if (boolean) {
+                    li_checkbox.map(item => item.checked = false);
+                    li_checkbox_parentNode.map(item => item.removeAttribute('class', 'completed'));
+                    li_checkbox_parentNode.map(item => item.setAttribute('class', 'active'));
+
+                } else {
+                    li_checkbox.map(item => item.checked = true);
+                    li_checkbox_parentNode.map(item => item.removeAttribute('class', 'active'));
+                    li_checkbox_parentNode.map(item => item.setAttribute('class', 'completed'));
+                }
+            }
+            //实现计数的功能
+        setInterval(function() {
+            let li_class = Array.from(document.querySelectorAll('.active'));
+            nums.textContent = li_class.length;
+        }, 0);
+
+
+        //实现all功能
+        all.onclick = function() {
+                var li_completed = Array.from(document.querySelectorAll('.completed'));
+                var li_active = Array.from(document.querySelectorAll('.active'));
+                li_active.map(item => item.style.display = 'block');
+                li_completed.map(item => item.style.display = 'block');
+            }
+            //实现active的功能
+        active.onclick = function() {
+                var li_completed = Array.from(document.querySelectorAll('.completed'));
+                var li_active = Array.from(document.querySelectorAll('.active'));
+                li_active.map(item => item.style.display = 'block');
+                li_completed.map(item => item.style.display = 'none');
+            }
+            //实现completed的功能
+        completed.onclick = function() {
+                var li_completed = Array.from(document.querySelectorAll('.completed'));
+                var li_active = Array.from(document.querySelectorAll('.active'));
+                li_active.map(item => item.style.display = 'none');
+                li_completed.map(item => item.style.display = 'block');
+            }
+            //实现clear completed功能
+        clear.onclick = function() {
+            var li_completed = Array.from(document.querySelectorAll('.completed'));
+            var li_active = Array.from(document.querySelectorAll('.active'));
+            li_completed.map(item => main_ul.removeChild(item));
+        }
+    </script>
+</body>
+
+</html>

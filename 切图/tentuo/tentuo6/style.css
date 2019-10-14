@@ -1,0 +1,61 @@
+    main {
+        margin-top: 90px;
+        margin-left: 40px;
+    }
+    
+    main article h2 {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 18px;
+    }
+    
+    main article p:nth-of-type(1) {
+        font: 10px lighter;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    main article p:nth-of-type(2) {
+        font: 13px lighter;
+        text-align: center;
+        line-height: 2;
+        color: #9eadca;
+        margin-bottom: 100px;
+    }
+    
+    .main-content:nth-of-type(2) {
+        float: right;
+        margin-right: 40px;
+    }
+    
+    .main-content:nth-of-type(1) {
+        float: left;
+    }
+    
+    main .main-content section {
+        position: relative;
+        height: 160px;
+        width: 550px;
+        background-color: #f2f3f6;
+        margin-top: 0;
+        display: block;
+    }
+    
+    .main-content section button {
+        position: absolute;
+        top: 35px;
+        left: 213px;
+        width: 120px;
+        height: 40px;
+        color: white;
+        background: #0457b7;
+        border-radius: 40px;
+        font-size: 18px;
+    }
+    
+    .main-content section p {
+        font: 15px;
+        text-align: center;
+        padding-top: 120px;
+        margin: 0;
+    }

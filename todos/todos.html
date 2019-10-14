@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul .completed {
+            text-decoration: line-through;
+        }
+        
+        ul .active {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" id="checkboxAll">
+        <input type="text" id="input">
+    </div>
+    <ul id="todos">
+
+    </ul>
+    <footer>
+        <span>
+           <span id="count"></span> item(s) left
+        </span>
+        <ul>
+            <li><button id="show_all">All</button></li>
+            <li><button id="show_active">Active</button></li>
+            <li><button id="show_completed">Completed</button></li>
+            <li><button id="show_clear">Clear All Completed</button></li>
+        </ul>
+    </footer>
+    <script>
+        var input = document.getElementById("input");
+        var ul = document.getElementById("todos");
+        //设置input值转到li
+        input.onkeyup = function(e) {
+                if (e.keyCode == 13 && input.value.trim()) {
+                    var value = input.value;
+                    input.value = '';
+                    var li = document.createElement("li");
+                    var liInput = document.createElement("input");
+                    liInput.setAttribute("type", "checkbox");
+                    li.setAttribute("class", "active")
+                    var span = document.createElement("span");
+                    span.textContent = value;
+                    span.setAttribute("id", "liSpan")
+                    span.ondblclick = function() {
+                        var spanInput = document.createElement("input");
+                        span.appendChild(spanInput);
+                        spanInput.onkeyup = function(e) {
+                            if (e.keyCode == 13) {
+                                span.textContent = e.target.value;
+                            }
+                        }
+                    }
+                    var button = document.createElement("button");
+                    button.textContent = "X";
+                    li.appendChild(liInput);
+                    li.appendChild(span);
+                    li.appendChild(button);
+                    ul.appendChild(li);
+                    //点击li中的input改变class
+                    liInput.onclick = function clicks() {
+                            if (liInput.checked) {
+                                li.setAttribute("class", "completed");
+                            } else {
+                                li.removeAttribute("class", "completed");
+                                li.setAttribute("class", "active");
+                            }
+                            if (ul.getAttribute("id") == "active" || ul.getAttribute("id") == "completed") {
+                                li.style.display = "none";
+                            }
+
+                        }
+                        //点击X删除li
+                    button.onclick = function() {
+                        ul.removeChild(li);
+                    }
+                }
+                var checkboxAll = document.getElementById("checkboxAll");
+                var liInputAll = ul.querySelectorAll("input");
+                var liInputAllValue = Object.values(liInputAll);
+                //点击全选按钮全选或全不选
+                checkboxAll.onclick = function() {
+                    if (liInputAllValue.every(x => x.checked == true)) {
+                        liInputAllValue.forEach(x => x.checked = false);
+                        liInputAllValue.forEach(x => x.parentNode.removeAttribute("class", "completed"));
+                        liInputAllValue.forEach(x => x.parentNode.setAttribute("class", "active"));
+                    } else {
+                        for (var i = 0; i < liInputAllValue.length; i++) {
+                            if (liInputAllValue[i].checked == false) {
+                                liInputAllValue[i].checked = true;
+                                liInputAllValue[i].parentNode.setAttribute("class", "completed");
+                                liInputAllValue[i].parentNode.removeAttribute("class", "active");
+                            }
+
+                        }
+                    }
+                }
+            }
+            //实现计数功能
+        setInterval(function() {
+                var num = ul.getElementsByClassName("active").length;
+                var count = document.getElementById("count");
+                return count.textContent = num;
+            }, 100)
+            //实现all按钮的 显示所有的li
+        show_all.onclick = function() {
+                var li = ul.querySelectorAll("li");
+                li.forEach(x => x.style.display = "block");
+                ul.removeAttribute("id", "active");
+                ul.removeAttribute("id", "completed");
+            }
+            //点击active 显示没有完成的
+
+        show_active.onclick = function() {
+                var li_completed = ul.querySelectorAll(".completed");
+                var li_active = ul.querySelectorAll(".active");
+                ul.setAttribute("id", "active");
+
+
+                li_active.forEach(x => x.style.display = "block");
+
+                li_completed.forEach(x => x.style.display = "none");
+            }
+            //显示已经完成的
+        show_completed.onclick = function() {
+                var li_active = ul.querySelectorAll(".active");
+                var li_completed = ul.querySelectorAll(".completed");
+                li_active.forEach(x => x.style.display = "none");
+                li_completed.forEach(x => x.style.display = "block");
+                ul.setAttribute("id", "completed");
+
+
+            }
+            //清除已经完成的
+        show_clear.onclick = function() {
+            var li_completed = ul.querySelectorAll(".completed");
+            for (var i = 0; i < li_completed.length; i++) {
+                ul.removeChild(li_completed[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

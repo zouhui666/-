@@ -1,0 +1,150 @@
+@media all and (max-width: 960px) {
+    header .header-content .mein {
+        display: none !important;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+}
+
+header .header-content {
+    height: 80px;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header .header-content .logo {
+    width: 20%;
+    display: inline-block;
+}
+
+header .header-content .logo img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+header .header-content .mein {
+    float: right;
+}
+
+header .header-content .mein nav {
+    display: inline-block;
+}
+
+header .header-content .mein nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+header .header-content .mein nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 20px;
+    line-height: normal;
+    overflow: hidden;
+}
+
+header .header-content .mein nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+    display: block;
+    transition: all .5s linear;
+}
+
+header .header-content .mein nav ul li a::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    color: rgb(107, 156, 213);
+    border-bottom: 1px solid rgb(107, 156, 213);
+}
+
+header .header-content .mein nav ul li a:hover {
+    display: block;
+    transform: translatey(-23px);
+}
+
+header .header-content .mein nav ul li:nth-of-type(1) a {
+    font-size: 18px;
+    font-weight: 400;
+    transform: none;
+}
+
+header .header-content .mein nav ul li:nth-of-type(2) a::after {
+    content: '关注我们';
+}
+
+header .header-content .mein nav ul li:nth-of-type(3) a::after {
+    content: '主营产品';
+}
+
+header .header-content .mein nav ul li:nth-of-type(4) a::after {
+    content: '新闻动态';
+}
+
+header .header-content .mein nav ul li:nth-of-type(5) a::after {
+    content: '成为供应商';
+}
+
+header .header-content .mein nav ul li:nth-of-type(6) a::after {
+    content: '加入我们';
+}
+
+header .header-content .mein nav ul li:nth-of-type(7) a::after {
+    content: '联系我们';
+}
+
+header .header-content .mein .language {
+    width: 20px;
+    display: inline-block;
+}
+
+header .header-content .mein .language img {
+    width: 100%;
+    vertical-align: -5px;
+}
+
+.banner-image {
+    background: url('image/temtop2.jpg') no-repeat;
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    overflow: hidden;
+}
+
+.banner-image .image-right,
+.banner-image .image-left {
+    width: 10%;
+    height: 500px;
+    /* background: transparent; */
+    padding: 100px;
+}
+
+.banner-image .arrow {
+    width: 100%;
+    margin-left: -10px;
+    background: blue;
+}
+
+.banner-image .image-left {
+    float: left;
+    vertical-align: center;
+    background: red;
+}
+
+.banner-image .image-right {
+    float: right;
+    background: red;
+}

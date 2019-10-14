@@ -1,0 +1,61 @@
+main {
+    background: url("image/电话.png") no-repeat 770px 255px, url("image/邮箱.png") no-repeat 770px 355px, url("image/地址.png") no-repeat 770px 480px;
+    background-size: 66px;
+}
+
+main>h2 {
+    font-size: 23px;
+    text-align: center;
+    margin-top: 95px;
+    margin-bottom: 0;
+}
+
+main>p {
+    font: 12px lighter;
+    text-align: center;
+    margin-top: 16px;
+}
+
+main #map {
+    margin-top: 125px;
+    margin-left: 40px;
+    float: left;
+}
+
+aside {
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 100px;
+}
+
+aside ul li {
+    height: 100px;
+    list-style: none;
+    font-size: 18px;
+    margin-left: 50px；
+}
+
+
+/*aside ul li:nth-of-type(1) {
+    background: url("image/电话.png") no-repeat;
+    background-size: 66px 66px;
+    background-position: 490px 15px;
+}
+
+aside ul li:nth-of-type(2) {
+    background: url("image/邮箱.png") no-repeat;
+    background-size: 66px 66px;
+    background-position: 490px 15px;
+}
+
+aside ul li:nth-of-type(3) {
+    background: url("image/地址.png") no-repeat;
+    background-size: 66px 66px;
+    background-position: 490px 15px;
+}
+*/
+
+aside ul li a {
+    text-decoration: none;
+    font-size: 13px;
+}

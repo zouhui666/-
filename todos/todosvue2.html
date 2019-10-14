@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            text-decoration: none;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="todoapp">
+        <header>
+            <h1>todos</h1>
+            <input type="text" v-model="newTodo" @keyup.enter="addTodo">
+            <input type="checkbox" id="toggle-all" v-model="toggleall" @click="toggleAll">
+        </header>
+        <main>
+            <ul>
+                <li v-for="(todo, index) in todos" :key="index" :class="[todo.Checked ? completed: active]" v-show="todo.Checked === bolean || All">
+                    <input type="checkbox" v-model="todo.Checked">
+                    <label @dblclick="editTodo(todo)" v-if="todo.inputview">{{todo.title}}</label>
+                    <input type="text" v-model="todo.newEdit" @keyup.enter="newEditTodo(todo)" v-else value="todo.title">
+                    <input type="radio" @click="remove(todo)">
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <span>{{remaining}} item of left</span>
+            <button @click="All = true">All</button>
+            <button @click="bolean = false, All = false">Active</button>
+            <button @click="bolean = true, All=false">Completed</button>
+            <button @click="clearCompleted">Clear Completed</button>
+        </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#todoapp',
+            data() {
+                return {
+                    active: 'active',
+                    completed: 'completed',
+                    toggleall: false,
+                    newTodo: '',
+                    todos: [],
+                    bolean: true,
+                    All: true
+                }
+            },
+            methods: {
+                addTodo() {
+                    let value = this.newTodo && this.newTodo.trim()
+                    if (!value) {
+                        return
+                    }
+                    this.todos.push({
+                        newEdit: '',
+                        inputview: true,
+                        title: value,
+                        Checked: false
+                    })
+                    this.newTodo = ''
+                },
+                toggleAll() {
+                    var todos = this.todos
+                    var bool = todos.every(function(todo) {
+                        return todo.Checked
+                    })
+                    if (bool) {
+                        return todos.map(todo => todo.Checked = false)
+                    } else {
+                        return todos.map(todo => todo.Checked = true)
+                    }
+                },
+                remove: function(todo) {
+                    this.todos.splice(this.todos.indexOf(todo), 1)
+                },
+                editTodo: function(todo) {
+                    todo.inputview = false
+                },
+                newEditTodo: function(todo) {
+                    todo.title = todo.newEdit
+                    todo.inputview = true
+                },
+                clearCompleted: function() {
+                    this.todos = this.todos.filter(todo => {
+                        return !todo.Checked
+                    })
+                }
+            },
+            computed: {
+                remaining: function() {
+                    return this.todos.filter(todo => {
+                        return !todo.Checked
+                    }).length
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

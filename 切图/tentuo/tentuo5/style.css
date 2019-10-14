@@ -1,0 +1,118 @@
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            
+            #home-page article {
+                position: absolute;
+                top: 100px;
+                left: 460px;
+            }
+            
+            #home-page article h2 {
+                font-size: 25px;
+                color: white;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            
+            #home-page article h1 {
+                font-size: 48px;
+                color: white;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            
+            #home-page article button {
+                width: 165px;
+                height: 55px;
+                border-radius: 36px;
+                background: rgba(225, 225, 225, 0);
+                color: white;
+                font-size: 18px;
+                margin-left: 74px;
+                text-align: center;
+                border-color: white;
+            }
+            
+            main {
+                width: 1100px;
+                margin-left: 90px;
+                margin-top: 80px;
+            }
+            
+            main article {
+                display: inline-block;
+                margin-left: 390px;
+            }
+            
+            main article h2 {
+                font-size: 25px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            main article p {
+                font-size: 10px;
+                font-weight: lighter;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            main article ul li {
+                float: left;
+                list-style: none;
+                font-size: 15px;
+                font-weight: lighter;
+                margin-left: 36px;
+            }
+            
+            main .main-content {
+                margin-top: 120px;
+                position: relative;
+                clear: both;
+            }
+            
+            main .main-content section {
+                position: absolute;
+                top: 180px;
+                left: 540px;
+                width: 530px;
+                height: 300px;
+                background: #f2f3f6;
+            }
+            
+            .main-content section h2 {
+                font-size: 20px;
+                margin-top: 80px;
+                margin-left: 35px;
+                margin-bottom: 55px;
+            }
+            
+            .main-content section p {
+                font-size: 13px;
+                line-height: 30px;
+                margin-left: 35px;
+                margin-right: 30px;
+            }
+            
+            .main-content img:nth-of-type(2) {
+                position: absolute;
+                top: 209px;
+                left: 983px;
+                color: #f2f3f6;
+            }
+            
+            #button button {
+                width: 165px;
+                height: 55px;
+                border-radius: 36px;
+                background: rgba(225, 225, 225, 0);
+                color: #0457b7;
+                font-size: 18px;
+                margin-left: 550px;
+                margin-top: 150px;
+                text-align: center;
+                border-color: #0457b7;
+            }
